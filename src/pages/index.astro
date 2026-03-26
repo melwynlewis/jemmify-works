@@ -1,0 +1,37 @@
+---
+import { SITE } from '@/config/site';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Services from '@/components/home/Services.astro';
+import Approach from '@/components/home/Approach.astro';
+import Differentiation from '@/components/home/Differentiation.astro';
+import Audit from '@/components/home/Audit.astro';
+import Work from '@/components/home/Work.astro';
+import Clients from '@/components/home/Clients.astro';
+import Contact from '@/components/home/Contact.astro';
+import BlogPreview from '@/components/home/BlogPreview.astro';
+---
+
+<BaseLayout
+  title={SITE.title}
+  description={SITE.description}
+  type="website"
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: new URL(Astro.url.pathname, SITE.url).toString(),
+    sameAs: Object.values(SITE.socials),
+    logo: SITE.image.src,
+  }}
+>
+  <Hero />
+  <Clients />
+  <Services />
+  <Approach />
+  <Differentiation />
+  <Audit />
+  <Work />
+  <BlogPreview />
+  <Contact />
+</BaseLayout>

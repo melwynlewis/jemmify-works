@@ -1,0 +1,90 @@
+---
+---
+<section id="approach" class="py-24 md:py-32 bg-white px-6 overflow-hidden" data-ps="src/components/home/Approach.astro:main">
+  <div class="max-w-7xl mx-auto" data-ps="src/components/home/Approach.astro:container">
+    <div class="mb-16 reveal" data-ps="src/components/home/Approach.astro:header">
+      <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-4" data-ps="src/components/home/Approach.astro:title">Our Approach</h2>
+      <p class="text-xl text-zinc-600 max-w-2xl" data-ps="src/components/home/Approach.astro:subtitle">
+        A proven, data-driven process focused on measurable business outcomes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12" data-ps="src/components/home/Approach.astro:grid">
+      <!-- Accordion Column -->
+      <div class="lg:col-span-7 space-y-4" data-ps="src/components/home/Approach.astro:accordion">
+        {[
+          {
+            title: "Business-First Strategy",
+            content: "Before designing anything, we analyze how your business generates revenue, the customer journey, and the conversion funnel to ensure the website supports real business goals."
+          },
+          {
+            title: "Data-Driven Research",
+            content: "We study analytics, competitor websites, and customer behavior to design intuitive and conversion-focused digital experiences."
+          },
+          {
+            title: "Performance & Conversion Focus",
+            content: "We prioritize speed, usability, and clear user journeys to maximize conversions and improve Core Web Vitals."
+          },
+          {
+            title: "ROI-Driven Execution",
+            content: "Our objective is to help websites deliver at least 3× return on investment within 6-12 months of launch."
+          }
+        ].map((item, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms`} data-ps="src/components/home/Approach.astro:item">
+            <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 overflow-hidden" open={index === 0}>
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none focus:outline-none">
+                <div class="flex items-center gap-4" data-ps={`src/components/home/Approach.astro:balf0t-${index}`}>
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sapphire/10 text-sapphire text-xs font-bold group-open:bg-sapphire group-open:text-white transition-colors" data-ps={`src/components/home/Approach.astro:fj6gy4-${index}`}>0{index + 1}</span>
+                  <h3 class="text-lg md:text-xl font-bold text-zinc-900 group-open:text-sapphire-dark transition-colors" data-ps={`src/components/home/Approach.astro:amsr5z-${index}`}>{item.title}</h3>
+                </div>
+                <div class="transition-transform duration-300 group-open:rotate-180" data-ps={`src/components/home/Approach.astro:balf0s-${index}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sapphire"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+              </summary>
+              <div class="px-6 pb-6 pl-18" data-ps={`src/components/home/Approach.astro:balf0r-${index}`}>
+                <p class="text-zinc-600 leading-relaxed text-lg" data-ps={`src/components/home/Approach.astro:2swc1f-${index}`}>
+                  {item.content.includes("3× return on investment") ? (
+                    <span data-ps={`src/components/home/Approach.astro:8nwtwf-${index}`}>Our objective is to help websites deliver at least <strong class="text-emerald">3× return on investment</strong> within 6-12 months of launch.</span>
+                  ) : item.content}
+                </p>
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
+
+      <!-- Highlight Card Column -->
+      <div class="lg:col-span-5 reveal reveal-delay-3" data-ps="src/components/home/Approach.astro:highlight">
+        <div class="bg-primary rounded-3xl p-10 text-white h-full flex flex-col justify-center relative overflow-hidden group" data-ps="src/components/home/Approach.astro:balf0q">
+          <!-- Gem decoration -->
+          <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-emerald/20" data-ps="src/components/home/Approach.astro:balf0p"></div>
+          <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-sapphire/10 blur-3xl rounded-full transition-all duration-700 group-hover:scale-150 group-hover:bg-sapphire/20" data-ps="src/components/home/Approach.astro:balf0o"></div>
+          
+          <div class="relative z-10" data-ps="src/components/home/Approach.astro:card-content">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight" data-ps="src/components/home/Approach.astro:amsr5y">When Should a Website Be Redesigned?</h3>
+            <div class="space-y-6" data-ps="src/components/home/Approach.astro:balf0n">
+              <p class="text-zinc-300 text-lg font-medium italic" data-ps="src/components/home/Approach.astro:2swc1g">
+                "In 2026, site age does not matter."
+              </p>
+              <p class="text-zinc-200 text-lg leading-relaxed" data-ps="src/components/home/Approach.astro:2swc1h">
+                If analytics show high bounce rates, low <span class="text-emerald font-medium" data-ps="src/components/home/Approach.astro:8nwtwe">conversions</span>, or poor Core Web Vitals, a redesign is needed regardless of the site's age.
+              </p>
+              <div class="pt-6 border-t border-white/10" data-ps="src/components/home/Approach.astro:balf0m">
+                <a href="#audit" class="inline-flex items-center gap-2 text-ruby font-bold hover:text-ruby-dark transition-colors" data-ps="src/components/home/Approach.astro:9wu8r7">
+                  Get a Performance Audit
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout title={`Privacy Policy | ${SITE.name}`}>
+  <article class="max-w-3xl mx-auto px-6 py-32 prose prose-zinc lg:prose-xl" data-ps="src/pages/privacy.astro:qmsyi0">
+    <h1 data-ps="src/pages/privacy.astro:g0kebr">Privacy Policy</h1>
+    <p data-ps="src/pages/privacy.astro:brhxa4">Last Updated: {new Date().toLocaleDateString()}</p>
+    
+    <p data-ps="src/pages/privacy.astro:brhxa5">At {SITE.name}, we value your privacy. This policy explains how we collect and use your data when you visit our website.</p>
+    
+    <h2 data-ps="src/pages/privacy.astro:ghm1gr">Information Collection</h2>
+    <p data-ps="src/pages/privacy.astro:najazv">We collect information through our contact form (Name, Email, Message) to provide you with requested information and services.</p>
+    
+    <h2 data-ps="src/pages/privacy.astro:ghm1gq">Use of Data</h2>
+    <p data-ps="src/pages/privacy.astro:najazw">We use your data only for communication purposes and to improve our digital services.</p>
+    
+    <h2 data-ps="src/pages/privacy.astro:ghm1gp">Third Parties</h2>
+    <p data-ps="src/pages/privacy.astro:najazx">We do not sell or share your personal information with third parties for marketing purposes.</p>
+    
+    <h2 data-ps="src/pages/privacy.astro:ghm1go">Cookies</h2>
+    <p data-ps="src/pages/privacy.astro:najazy">Our website uses minimal cookies to ensure a smooth user experience.</p>
+  </article>
+</BaseLayout>

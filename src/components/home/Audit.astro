@@ -1,0 +1,101 @@
+---
+---
+<section id="audit" class="py-24 md:py-32 bg-zinc-900 px-6 relative overflow-hidden" data-ps="src/components/home/Audit.astro:main">
+  <!-- Subtle background decoration -->
+  <div class="absolute inset-0 z-0 opacity-30" data-ps="src/components/home/Audit.astro:nl8yrh">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/20 blur-3xl rounded-full" data-ps="src/components/home/Audit.astro:nl8yrg"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-rose-500/20 blur-3xl rounded-full" data-ps="src/components/home/Audit.astro:nl8yrf"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10" data-ps="src/components/home/Audit.astro:container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-ps="src/components/home/Audit.astro:grid">
+      
+      <div class="reveal" data-ps="src/components/home/Audit.astro:content">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight" data-ps="src/components/home/Audit.astro:title">
+          Is Your Website Holding Your Business Back?
+        </h2>
+        <p class="text-xl text-zinc-400 mb-10 leading-relaxed" data-ps="src/components/home/Audit.astro:desc">
+          Many businesses lose leads because their websites are slow, confusing, or poorly optimized for conversions. 
+          Get a <span class="text-white font-bold" data-ps="src/components/home/Audit.astro:dc5272">free website performance audit</span> and discover what is preventing your site from generating more leads.
+        </p>
+
+        <ul class="space-y-4 mb-10" data-ps="src/components/home/Audit.astro:checklist">
+          {[
+            "Bounce rate above 60%",
+            "Conversion rate below 2%",
+            "Slow page speed",
+            "Poor mobile experience",
+            "Weak calls-to-action"
+          ].map(item => (
+            <li class="flex items-center gap-3 text-zinc-300 font-medium" data-ps="src/components/home/Audit.astro:check-item">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center" data-ps="src/components/home/Audit.astro:nl8yre">
+                <div class="w-2 h-2 rounded-full bg-emerald-400" data-ps="src/components/home/Audit.astro:nl8yrd"></div>
+              </div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-2" data-ps="src/components/home/Audit.astro:form-container">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2rem] shadow-2xl" data-ps="src/components/home/Audit.astro:form-box">
+          <form class="space-y-5" data-ps="src/components/home/Audit.astro:form">
+            <div data-ps="src/components/home/Audit.astro:nl8yrc">
+              <label for="audit-name" class="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-2 px-1" data-ps="src/components/home/Audit.astro:w9v7gf">Name</label>
+              <input 
+                type="text" 
+                id="audit-name" 
+                name="name" 
+                required 
+                placeholder="Your name"
+                class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 transition-colors"
+              />
+            </div>
+            <div data-ps="src/components/home/Audit.astro:nl8yrb">
+              <label for="audit-email" class="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-2 px-1" data-ps="src/components/home/Audit.astro:w9v7ge">Email</label>
+              <input 
+                type="email" 
+                id="audit-email" 
+                name="email" 
+                required 
+                placeholder="your@email.com"
+                class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 transition-colors"
+              />
+            </div>
+            <div data-ps="src/components/home/Audit.astro:nl8yr9">
+              <label for="audit-phone" class="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-2 px-1" data-ps="src/components/home/Audit.astro:w9v7gd">Phone Number</label>
+              <input 
+                type="tel" 
+                id="audit-phone" 
+                name="phone" 
+                required 
+                placeholder="+91 98765 43210"
+                class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 transition-colors"
+              />
+            </div>
+            <div data-ps="src/components/home/Audit.astro:nl8yra">
+              <label for="audit-url" class="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-2 px-1" data-ps="src/components/home/Audit.astro:w9v7gc">Website URL</label>
+              <input 
+                type="url" 
+                id="audit-url" 
+                name="url" 
+                required 
+                placeholder="https://yourwebsite.com"
+                class="w-full px-6 py-4 bg-white/10 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 transition-colors"
+              />
+            </div>
+            <div class="pt-4" data-ps="src/components/home/Audit.astro:nl8yr9">
+              <button type="submit" class="w-full py-5 rounded-xl bg-white text-zinc-900 font-bold text-lg hover:bg-zinc-100 transition-all hover-lift shadow-lg shadow-white/5" data-ps="src/components/home/Audit.astro:o0rrvn">
+                Get My Website Audit
+              </button>
+              <p class="text-center text-zinc-400 text-xs mt-4" data-ps="src/components/home/Audit.astro:qoij2c">
+                We'll analyze your site and send the report within 24 hours.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

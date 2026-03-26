@@ -1,0 +1,120 @@
+---
+import { SITE } from '@/config/site';
+
+export interface Props {
+  logo?: string;
+}
+
+const { logo = SITE.name } = Astro.props;
+---
+
+<header id="navbar" class="sticky top-0 z-50 bg-primary/95 backdrop-blur-lg" data-ps="src/components/Navigation.astro:dt8k86">
+  <nav class="py-4" data-ps="src/components/Navigation.astro:m59h3b">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center" data-ps="src/components/Navigation.astro:gqvsdb">
+      <a href="/" class="flex items-center gap-2 no-underline transition-opacity hover:opacity-90" data-ps="src/components/Navigation.astro:kd8n5y">
+        <img src="https://cdn.pagesmith.app/a9746ff4/images/Jemmify-Works-Logo-Reversed-Final-1024.webp" alt="Jemmify Works" class="h-18 md:h-20 w-auto" data-ps="src/components/Navigation.astro:d4d69v" />
+      </a>
+
+      <div class="flex items-center gap-6" data-ps="src/components/Navigation.astro:gqvsdc">
+        <div class="hidden md:flex gap-8 items-center" data-ps="src/components/Navigation.astro:gqvsdd">
+          <a href="/#services" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:kd8n5x">What We Do</a>
+          <a href="/#approach" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:approach-link">Our Approach</a>
+          <a href="/#work" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:kd8n5y">Our Work</a>
+          <a href="/blog" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:kd8n5z">Resources</a>
+          
+          <div class="h-6 w-px bg-white/20 mx-2" aria-hidden="true" data-ps="src/components/Navigation.astro:gqvsd9"></div>
+
+          <div class="flex items-center gap-6" data-ps="src/components/Navigation.astro:right-nav">
+            <a href="/#approach" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:about-link">About</a>
+            <a href="/#contact" class="text-white font-medium no-underline hover:underline decoration-ruby decoration-2 underline-offset-8 transition-all" data-ps="src/components/Navigation.astro:contact-link">Contact</a>
+            <a href="/#contact" class="bg-ruby text-white px-5 py-2 rounded-lg font-bold hover:bg-ruby-dark transition-all no-underline shadow-md shadow-ruby/20" data-ps="src/components/Navigation.astro:kd8n6a">Talk to Us</a>
+          </div>
+        </div>
+
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="md:hidden p-2 text-white hover:text-zinc-300 transition-colors"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+         data-ps="src/components/Navigation.astro:5ds1">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden overflow-hidden bg-primary border-t border-white/10"
+    role="navigation"
+    aria-label="Mobile navigation"
+   data-ps="src/components/Navigation.astro:gqvsde">
+    <nav class="flex flex-col py-6 px-6 gap-2" data-ps="src/components/Navigation.astro:m59h36">
+      <a href="/#services" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:kd8n5w">What We Do</a>
+      <a href="/#approach" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:approach-link-mobile">Our Approach</a>
+      <a href="/#work" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:kd8n5v">Our Work</a>
+      <a href="/blog" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:kd8n5u">Resources</a>
+      <a href="/#approach" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:about-mobile">About</a>
+      <a href="/#contact" class="text-white font-medium py-2 no-underline hover:underline decoration-ruby decoration-2 underline-offset-4 transition-all" data-ps="src/components/Navigation.astro:contact-mobile">Contact</a>
+      
+      <div class="mt-4" data-ps="src/components/Navigation.astro:gqvsde">
+        <a href="/#contact" class="bg-ruby text-white px-6 py-3 rounded-lg font-bold text-center no-underline hover:bg-ruby-dark transition-all block shadow-md shadow-ruby/20" data-ps="src/components/Navigation.astro:kd8n5t">Talk to Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const navbar = document.getElementById('navbar');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('md:bg-primary/95');
+    } else {
+      navbar?.classList.remove('md:bg-primary/95');
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  function toggleMenu() {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuIconOpen?.classList.add('hidden');
+      menuIconClose?.classList.remove('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMenu);
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+      toggleMenu();
+    }
+  });
+</script>

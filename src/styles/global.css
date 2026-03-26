@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #3b3b3b;
+  --color-primary-dark: #2a2a2a;
+  --color-ruby: #de1862;
+  --color-ruby-dark: #c7205f;
+  --color-emerald: #bcc341;
+  --color-emerald-dark: #acb041;
+  --color-sapphire: #2d58a5;
+  --color-sapphire-dark: #13519f;
+}
+
+:root {
+  /* Layout - update if nav padding/structure changes */
+  --nav-height: 64px;
+
+  /* Page colors */
+  --background: hsl(0 0% 100%);
+  --text: hsl(220 13% 18%);
+  --text-muted: hsl(220 9% 46%);
+  --border: hsl(220 13% 91%);
+  --surface: hsl(220 13% 98%);
+
+  /* Brand colors */
+  --primary: #3b3b3b;
+  --primary-hover: #2a2a2a;
+  
+  /* Gem Highlights */
+  --ruby: #de1862;
+  --ruby-dark: #c7205f;
+  --emerald: #bcc341;
+  --emerald-dark: #acb041;
+  --sapphire: #2d58a5;
+  --sapphire-dark: #13519f;
+
+  /* Accent sections (footer, hero) */
+  --accent-bg: #3b3b3b;
+  --accent-text: #ffffff;
+  --accent-border: #4a4a4a;
+
+  /* Status colors */
+  --success: hsl(142 76% 36%);
+  --error: hsl(0 72% 51%);
+  --warning: hsl(38 92% 50%);
+}
+
+/* Prevent horizontal scrolling on all devices */
+html, body {
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
+/* Apply theme colors globally */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Typography plugin - use theme variables */
+.prose {
+  --tw-prose-body: var(--text);
+  --tw-prose-headings: var(--text);
+  --tw-prose-lead: var(--text-muted);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: var(--text);
+  --tw-prose-counters: var(--text-muted);
+  --tw-prose-bullets: var(--text-muted);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--text);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-captions: var(--text-muted);
+  --tw-prose-code: var(--text);
+  --tw-prose-pre-code: var(--text);
+  --tw-prose-pre-bg: var(--surface);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+/* Prevent heading overflow on mobile and in flex containers */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  /* text-wrap: balance prevents orphans and awkward breaks in headlines */
+  text-wrap: balance;
+  /* Avoid aggressive hyphen dashes in headings for a cleaner look */
+  hyphens: none;
+  min-width: 0;
+}
+
+/* Body text - 'pretty' prevents widows, 'hyphens' handles long compound words in body columns */
+p, li {
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+/* Hero Pure CSS Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
+}
+.hero-animate-delay-1 { animation-delay: 0.1s; }
+.hero-animate-delay-2 { animation-delay: 0.2s; }
+.hero-animate-delay-3 { animation-delay: 0.3s; }
+.hero-animate-delay-4 { animation-delay: 0.4s; }
+
+/* Gem Cut Effect */
+.gem-cut {
+  clip-path: polygon(10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%, 0 20%);
+}
+
+.gem-border {
+  position: relative;
+  background: var(--primary);
+  padding: 1px;
+  clip-path: polygon(5% 0, 95% 0, 100% 15%, 100% 85%, 95% 100%, 5% 100%, 0 85%, 0 15%);
+}
+
+.gem-gradient-ruby { background: linear-gradient(135deg, var(--ruby) 0%, var(--ruby-dark) 100%); }
+.gem-gradient-emerald { background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%); }
+.gem-gradient-sapphire { background: linear-gradient(135deg, var(--sapphire) 0%, var(--sapphire-dark) 100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    animation: none;
+    opacity: 1;
+  }
+}

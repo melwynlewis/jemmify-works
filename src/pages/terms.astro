@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout title={`Terms of Service | ${SITE.name}`}>
+  <article class="max-w-3xl mx-auto px-6 py-32 prose prose-zinc lg:prose-xl" data-ps="src/pages/terms.astro:7x90if">
+    <h1 data-ps="src/pages/terms.astro:auyo1m">Terms of Service</h1>
+    <p data-ps="src/pages/terms.astro:zhj1np">Last Updated: {new Date().toLocaleDateString()}</p>
+    
+    <p data-ps="src/pages/terms.astro:zhj1no">By using the {SITE.name} website, you agree to these terms.</p>
+    
+    <h2 data-ps="src/pages/terms.astro:adx0wm">Services</h2>
+    <p data-ps="src/pages/terms.astro:uxjqfo">We provide digital strategy, branding, and web development services to SMBs.</p>
+    
+    <h2 data-ps="src/pages/terms.astro:adx0wn">Website Use</h2>
+    <p data-ps="src/pages/terms.astro:uxjqfn">You agree to use this website only for lawful purposes related to seeking our services.</p>
+    
+    <h2 data-ps="src/pages/terms.astro:adx0wo">Intellectual Property</h2>
+    <p data-ps="src/pages/terms.astro:uxjqfm">All content on this website, including logo, text, and images, is the property of {SITE.name}.</p>
+    
+    <h2 data-ps="src/pages/terms.astro:adx0wp">Disclaimer</h2>
+    <p data-ps="src/pages/terms.astro:uxjqfl">While we strive for excellence, the information on this website is for general purposes and does not guarantee specific results.</p>
+  </article>
+</BaseLayout>

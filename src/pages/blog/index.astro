@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+
+const blogPosts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+const sortedPosts = blogPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title={`Resource | ${SITE.name}`} description="Expert insights on digital strategy, branding, and growth for SMBs.">
+  <section class="bg-zinc-50 pt-32 pb-20 px-6" data-ps="src/pages/blog/index.astro:a1dpq1">
+    <div class="max-w-7xl mx-auto text-center" data-ps="src/pages/blog/index.astro:z9lr8j">
+      <h1 class="text-4xl md:text-6xl font-bold text-zinc-900 mb-6" data-ps="src/pages/blog/index.astro:hfexjz">Our Resource Hub</h1>
+      <p class="text-xl text-zinc-600 max-w-2xl mx-auto" data-ps="src/pages/blog/index.astro:60ko9t">
+        Insights and strategies to help you navigate the digital landscape and evolve your business.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-white" data-ps="src/pages/blog/index.astro:a1dpq2">
+    <div class="max-w-7xl mx-auto" data-ps="src/pages/blog/index.astro:z9lr8k">
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-ps="src/pages/blog/index.astro:z9lr8l">
+        {sortedPosts.map((post, index) => (
+          <article class={`group reveal reveal-delay-${index + 1}`} data-ps="src/pages/blog/index.astro:joklka">
+            <a href={`/blog/${post.slug}`} class="block no-underline" data-ps="src/pages/blog/index.astro:d4ikzl">
+              <div class="aspect-video rounded-3xl overflow-hidden bg-zinc-100 mb-6" data-ps="src/pages/blog/index.astro:z9lr8m">
+                {post.data.image ? (
+                  <img src={post.data.image} alt={post.data.title} crossorigin="anonymous" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-ps="src/pages/blog/index.astro:pasih8" />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-zinc-300 font-bold text-4xl bg-zinc-900" data-ps="src/pages/blog/index.astro:z9lr8n">
+                    Jemmify
+                  </div>
+                )}
+              </div>
+              <div class="flex gap-4 items-center mb-4" data-ps="src/pages/blog/index.astro:z9lr8o">
+                <span class="px-3 py-1 bg-zinc-100 text-zinc-600 rounded-full text-xs font-bold uppercase tracking-wider" data-ps="src/pages/blog/index.astro:pg71q2">{post.data.category}</span>
+                <time class="text-sm text-zinc-600">{post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+              </div>
+              <h2 class="text-2xl font-bold text-zinc-900 group-hover:text-zinc-600 transition-colors mb-4" data-ps="src/pages/blog/index.astro:2r00ce">{post.data.title}</h2>
+              <p class="text-zinc-600 leading-relaxed line-clamp-2" data-ps="src/pages/blog/index.astro:60ko9u">
+                {post.data.description}
+              </p>
+            </a>
+          </article>
+        ))}
+      </div>
+      
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-20" data-ps="src/pages/blog/index.astro:z9lr8p">
+          <p class="text-zinc-600 text-xl" data-ps="src/pages/blog/index.astro:60ko9v">No resources available yet. Check back soon!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

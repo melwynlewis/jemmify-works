@@ -1,0 +1,223 @@
+---
+const services = [
+  {
+    id: "web",
+    title: "Web & Digital Experiences",
+    description: "We design and develop responsive, high-performance websites that are built for conversion, scalability, and long-term growth. From landing pages and dynamic websites to SaaS platforms and B2B web development, every solution is tailored to your business goals.",
+    features: [
+      "Custom Responsive Website Design",
+      "High-converting Landing Page Design",
+      "Scalable Dynamic Website Development",
+      "SaaS Website Design & Experiences",
+      "B2B Website Development",
+      "Performance optimization (Core Web Vitals)"
+    ],
+    cta: "Explore Web Solutions →",
+    image: "https://images.unsplash.com/photo-1637937459053-c788742455be?auto=format&w=800&q=80"
+  },
+  {
+    id: "brand",
+    title: "Brand Identity & Graphic Design",
+    description: "We build distinct, memorable brands that communicate clearly and consistently across digital and physical touchpoints. Our graphic design and branding services in Bengaluru ensure your business stands out and builds trust.",
+    features: [
+      "Logo design & visual identity systems",
+      "Brand guidelines & design systems",
+      "Marketing collateral (brochures, decks)",
+      "Digital-first graphic design",
+      "Corporate branding for B2B and startups"
+    ],
+    cta: "Build Your Brand →",
+    image: "https://images.unsplash.com/photo-1669384536177-8301c2f14ca1?auto=format&w=800&q=80"
+  },
+  {
+    id: "growth",
+    title: "Growth Strategy & Conversion Optimization",
+    description: "We go beyond design to help you grow traffic, improve conversions, and generate leads through data-driven strategies tailored to your business.",
+    features: [
+      "Website analytics & performance audits",
+      "Conversion Rate Optimization (CRO)",
+      "SEO-ready website architecture",
+      "Funnel and user journey optimization",
+      "Landing page optimization for campaigns"
+    ],
+    cta: "Accelerate Growth →",
+    image: "https://images.unsplash.com/photo-1763038311036-6d18805537e5?auto=format&w=800&q=80"
+  },
+  {
+    id: "support",
+    title: "Ongoing Support & Optimization",
+    description: "Your website is never “done.” We provide ongoing support to ensure your CMS website, e-commerce platform, or business site continues to perform, scale, and evolve.",
+    features: [
+      "CMS Website Development & Management",
+      "Website maintenance & monitoring",
+      "Speed optimization & improvements",
+      "Feature enhancements & upgrades",
+      "Continuous A/B testing and optimization"
+    ],
+    cta: "Optimize Your Website →",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&w=800&q=80"
+  }
+];
+---
+
+<section id="services" class="py-24 md:py-32 bg-white px-6 overflow-hidden" data-ps="src/components/home/Services.astro:dod6c7">
+  <div class="max-w-7xl mx-auto" data-ps="src/components/home/Services.astro:8cm2gw">
+    <div class="text-center mb-12 md:mb-20 reveal" data-ps="src/components/home/Services.astro:8cm2gv">
+      <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-6" data-ps="src/components/home/Services.astro:j6q9b9">What We Do</h2>
+      <p class="text-xl text-zinc-600 max-w-3xl mx-auto" data-ps="src/components/home/Services.astro:amfv8r">
+        We help businesses in Bengaluru and beyond build high-performing websites, strong brand identities, and scalable digital growth systems designed to convert, engage, and grow revenue.
+      </p>
+    </div>
+
+    <!-- Mobile Stack Layout (visible < lg) -->
+    <div class="flex flex-col gap-12 lg:hidden reveal" data-ps="src/components/home/Services.astro:mobile-stack">
+      {services.map((service, index) => (
+        <div class="bg-zinc-50 rounded-3xl overflow-hidden border border-zinc-100 p-8 shadow-sm" data-ps="src/components/home/Services.astro:8cm2gy">
+          <div class="flex flex-col gap-8" data-ps="src/components/home/Services.astro:8cm2gx">
+            <div class="relative rounded-2xl overflow-hidden shadow-lg h-56 w-full order-1" data-ps="src/components/home/Services.astro:8cm2gw">
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                crossorigin="anonymous"
+                class="w-full h-full object-cover"
+                loading="lazy" data-ps="src/components/home/Services.astro:wt90ux" />
+              <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent pointer-events-none" data-ps="src/components/home/Services.astro:8cm2gv"></div>
+            </div>
+            
+            <div class="flex flex-col order-2" data-ps="src/components/home/Services.astro:8cm2gu">
+              <h3 class="text-2xl font-bold text-zinc-900 mb-4" data-ps="src/components/home/Services.astro:ipom6c">{service.title}</h3>
+              <p class="text-zinc-600 mb-6 text-lg leading-relaxed" data-ps="src/components/home/Services.astro:vqhksj">
+                {service.description}
+              </p>
+              <ul class="space-y-3 mb-8">
+                {service.features.map((feature, i) => {
+                  let dotColor = "bg-sapphire";
+                  if (service.id === "growth") dotColor = "bg-emerald";
+                  if (service.id === "support") dotColor = "bg-ruby";
+                  return (
+                  <li class="flex items-center gap-3 text-zinc-800 font-semibold text-sm" data-ps="src/components/home/Services.astro:raohic">
+                    <div class={`w-2 h-2 rounded-full ${dotColor} flex-shrink-0`} data-ps="src/components/home/Services.astro:8cm2gt"></div>
+                    {feature}
+                  </li>
+                )})}
+              </ul>
+              <div data-ps="src/components/home/Services.astro:8cm2gs">
+                <a href="#contact" class="inline-flex items-center gap-2 text-sapphire font-bold hover:text-sapphire-dark hover:gap-4 transition-all text-sm" data-ps="src/components/home/Services.astro:hqdryl">
+                  {service.cta}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Desktop Tabs Layout (visible >= lg) -->
+    <div class="hidden lg:flex lg:flex-row gap-8 lg:gap-12 items-start reveal" data-ps="src/components/home/Services.astro:8cm2gu">
+      <!-- Tabs Navigation -->
+      <div class="w-full lg:w-[30%] flex flex-col gap-3 sticky top-32" data-ps="src/components/home/Services.astro:tabs-nav">
+        {services.map((service, index) => (
+          <button
+            data-service-tab={service.id}
+            class={`service-tab group flex items-center gap-3 p-3.5 rounded-xl text-left transition-all duration-300 border-2 border-transparent ${index === 0 ? 'bg-primary text-white shadow-lg border-l-4 border-l-ruby hover:bg-primary' : 'bg-zinc-50 text-zinc-600 border-l-4 border-l-transparent'}`}
+           data-ps="src/components/home/Services.astro:eqa60y">
+            <span class="text-sm font-bold transition-transform duration-300 group-hover:translate-x-1 leading-tight" data-ps="src/components/home/Services.astro:4ny1x8">{service.title}</span>
+            <svg class={`w-3.5 h-3.5 ml-auto transition-transform duration-300 ${index === 0 ? 'translate-x-0' : '-translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        ))}
+      </div>
+
+      <!-- Tab Content -->
+      <div class="w-full lg:w-[70%] min-h-[480px] relative" data-ps="src/components/home/Services.astro:tabs-content">
+        {services.map((service, index) => (
+          <div
+            id={`content-${service.id}`}
+            class={`service-content transition-all duration-500 absolute inset-0 ${index === 0 ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-8 z-0 pointer-events-none'}`}
+           data-ps="src/components/home/Services.astro:8cm2gz">
+            <div class="bg-zinc-50 rounded-3xl overflow-hidden border border-zinc-100 p-8 md:p-10 shadow-sm h-full" data-ps="src/components/home/Services.astro:8cm2gy">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-10 h-full" data-ps="src/components/home/Services.astro:8cm2gx">
+                <div class="md:col-span-8 flex flex-col justify-center" data-ps="src/components/home/Services.astro:8cm2gw">
+                  <h3 class="text-2xl font-bold text-zinc-900 mb-4" data-ps="src/components/home/Services.astro:ipom6b">{service.title}</h3>
+                  <p class="text-zinc-600 mb-6 text-base leading-relaxed" data-ps="src/components/home/Services.astro:amfv8r">
+                    {service.description}
+                  </p>
+                  <ul class="grid grid-cols-1 gap-y-2 mb-8">
+                    {service.features.map((feature, i) => {
+                      let dotColor = "bg-sapphire";
+                      if (service.id === "growth") dotColor = "bg-emerald";
+                      if (service.id === "support") dotColor = "bg-ruby";
+                      return (
+                      <li class="flex items-center gap-3 text-zinc-800 font-semibold text-sm" data-ps="src/components/home/Services.astro:raohi9">
+                        <div class={`w-2 h-2 rounded-full ${dotColor} flex-shrink-0`} data-ps="src/components/home/Services.astro:8cm2gv"></div>
+                        {feature}
+                      </li>
+                    )})}
+                  </ul>
+                  <div class="mt-2" data-ps="src/components/home/Services.astro:8cm2gu">
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sapphire font-bold hover:text-sapphire-dark hover:gap-4 transition-all" data-ps="src/components/home/Services.astro:hqdryj">
+                      {service.cta}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="md:col-span-4 relative rounded-2xl overflow-hidden shadow-xl h-40 md:h-48 self-center" data-ps="src/components/home/Services.astro:8cm2gt">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    crossorigin="anonymous"
+                    class="w-full h-full object-cover"
+                    loading="lazy" data-ps="src/components/home/Services.astro:wt90uw" />
+                  <div class="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent pointer-events-none" data-ps="src/components/home/Services.astro:8cm2gs"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Only run on desktop layout
+    const tabs = document.querySelectorAll('[data-service-tab]');
+    const contents = document.querySelectorAll('.service-content');
+    
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-service-tab');
+
+        // Update tabs
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'border-l-ruby', 'hover:bg-primary');
+          t.classList.add('bg-zinc-50', 'text-zinc-600', 'border-l-transparent');
+          t.querySelector('svg')?.classList.add('-translate-x-2', 'opacity-0');
+        });
+
+        tab.classList.remove('bg-zinc-50', 'text-zinc-600', 'border-l-transparent');
+        tab.classList.add('bg-primary', 'text-white', 'shadow-lg', 'border-l-ruby', 'hover:bg-primary');
+        tab.querySelector('svg')?.classList.remove('-translate-x-2', 'opacity-0');
+
+        // Update contents
+        contents.forEach(content => {
+          content.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+          content.classList.remove('opacity-100', 'translate-y-0', 'z-10');
+          content.style.zIndex = '0';
+        });
+
+        const targetContent = document.getElementById(`content-${targetId}`);
+        if (targetContent) {
+          targetContent.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+          targetContent.classList.add('opacity-100', 'translate-y-0', 'z-10');
+          targetContent.style.zIndex = '10';
+        }
+      });
+    });
+  });
+</script>
